@@ -39,7 +39,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
-    path("api/swagger/", schema_view.with_ui(), name="schema-json"),
+    path("api/swagger", schema_view.with_ui(), name="schema-json"),
     path('api/', include('mainapp.urls')),
     
 ]
@@ -48,7 +48,3 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include("mainapp.urls"))
-]
